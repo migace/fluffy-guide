@@ -34,4 +34,4 @@ def update_author(db: Session, author_id: int, author: schemas.AuthorCreate):
     db_author.surname = author.surname
     db.commit()
     db.refresh(db_author)
-    return author
+    return db_author

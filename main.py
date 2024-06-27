@@ -56,5 +56,5 @@ def delete_author(author_id: int, db: Session = Depends(get_db)):
 
 @app.put("/authors/{author_id}", response_model=schemas.Author)
 def update_author(author_id: int, author: schemas.AuthorCreate, db: Session = Depends(get_db)):
-    author = crud.update_author(db, author_id=author_id, author=author)
-    return author
+    updated_author = crud.update_author(db, author_id=author_id, author=author)
+    return updated_author
